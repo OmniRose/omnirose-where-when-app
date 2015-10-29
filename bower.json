@@ -1,0 +1,21 @@
+{
+  "name": "omnirose-where-when-app",
+  "homepage": "https://github.com/OmniRose/omnirose-where-when-app",
+  "authors": [
+    "Edmund von der Burg <evdb@ecclestoad.co.uk>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "AGPL",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "/www/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}
