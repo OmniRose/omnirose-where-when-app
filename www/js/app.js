@@ -5,13 +5,7 @@ $(document).on("deviceready", function() {
   deviceReadyDeferred.resolve();
 });
 
-$(document).on("mobileinit", function () {
-  jqmReadyDeferred.resolve();
-});
-
-$.when(deviceReadyDeferred, jqmReadyDeferred).then(init);
-
-console.log("starting");
+$.when(deviceReadyDeferred).then(init);
 
 function init() {
 
