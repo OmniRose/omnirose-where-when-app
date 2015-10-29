@@ -26,4 +26,38 @@ function init() {
   }
 
   setInterval(update_date, 10);
+
+
+  var $latitude = $("#latitude");
+  var $longitude = $("#longitude");
+  var $accuracy = $("#accuracy");
+
+  var $altitude = $("#altitude");
+  var $altitudeAccuracy = $("#altitudeAccuracy");
+
+  var $speed = $("#speed");
+  var $heading = $("#heading");
+
+  function update_location (position) {
+    $latitude.text(position.coords.latitude);
+    $longitude.text(position.coords.longitude);
+    $accuracy.text(position.coords.accuracy);
+
+    $altitude.text(position.coords.altitude);
+    $altitudeAccuracy.text(position.coords.altitudeAccuracy);
+
+    $speed.text(position.coords.speed);
+    $heading.text(position.coords.heading);
+  }
+
+  navigator.geolocation.watchPosition(
+    update_location,
+    function (err) {console.log(err);},
+    {
+      maximumAge: 1000,
+      enableHighAccuracy: true
+    }
+  );
+
+
 }
