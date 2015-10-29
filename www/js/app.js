@@ -15,6 +15,8 @@ console.log("starting");
 
 function init() {
 
+  StatusBar.hide();
+
   var $yyyymmdd_div = $("#yyyy-mm-dd");
   var $hhmmss_div = $("#hh-mm-ss");
 
