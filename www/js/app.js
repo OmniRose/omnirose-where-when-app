@@ -34,6 +34,9 @@ function init() {
   var $speed = $("#speed");
   var $heading = $("#heading");
 
+  var $geolocation_updated = $("#geolocation_updated");
+  $geolocation_updated.hide();
+
   function update_location (position) {
     $latitude.text( magellan(position.coords.latitude).latitude().toDM(' ') );
     $longitude.text( magellan(position.coords.longitude).longitude().toDM(' ') );
@@ -44,16 +47,24 @@ function init() {
 
     $speed.text(position.coords.speed);
     $heading.text(position.coords.heading);
+
+    $geolocation_updated.show();
+    $geolocation_updated.fadeOut();
   }
+
+  function update_location_error (err) {
+    console.log(err);
+  }
+
+  var update_location_options = {
+    maximumAge: 1000,
+    enableHighAccuracy: true
+  };
 
   navigator.geolocation.watchPosition(
     update_location,
-    function (err) {console.log(err);},
-    {
-      maximumAge: 1000,
-      enableHighAccuracy: true
-    }
+    update_location_error,
+    update_location_options
   );
-
 
 }

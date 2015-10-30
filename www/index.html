@@ -36,11 +36,12 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           Location and altitude
+          <span id="geolocation_updated">update</span>
         </div>
         <div class="panel-body">
           <div id="latitude">latitude</div>
           <div id="longitude">longitude</div>
-          <div>±<span id="accuracy">accuracy</span>m</div>
+          <div>accuracy: ±<span id="accuracy">accuracy</span>m</div>
 
           <div>
             <span id="altitude">???</span> (±<span id="altitudeAccuracy">?</span>m)
@@ -50,7 +51,8 @@
 
       <div class="panel panel-default">
         <div class="panel-body">
-          <span id="speed">???</span>m/s &mdash; <span id="heading">???</span>° True
+          <div>speed: <span id="speed">???</span>m/s</div>
+          <div>heading: <span id="heading">???</span>° True</div>
         </div>
       </div>
 
