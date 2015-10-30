@@ -35,8 +35,8 @@ function init() {
   var $heading = $("#heading");
 
   function update_location (position) {
-    $latitude.text(position.coords.latitude);
-    $longitude.text(position.coords.longitude);
+    $latitude.text( magellan(position.coords.latitude).latitude().toDM(' ') );
+    $longitude.text( magellan(position.coords.longitude).longitude().toDM(' ') );
     $accuracy.text(position.coords.accuracy);
 
     $altitude.text(position.coords.altitude);
